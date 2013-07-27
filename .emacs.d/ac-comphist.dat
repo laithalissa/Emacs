@@ -1,0 +1,104 @@
+((("setq" .
+   [1 0 0 0])
+  ("attribute" .
+   [1 0 0 0 0 0 0 0 0])
+  ("password" .
+   [1 0 0 0 0 0 0 0])
+  ("loginURL" .
+   [1 0 0 0 0 0 0 0])
+  ("username" .
+   [1 0 0 0 0 0 0 0])
+  ("resourceDirectory" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("fileManager" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("downloadableFileName" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("rootPage" .
+   [1 0 0 0 0 0 0 0])
+  ("year" .
+   [4 0 0 0])
+  ("moduleList" .
+   [1 0 1 0 0 0 0 0 0 0])
+  ("listOfModules" .
+   [0 0 0 0 0 0 1 0 1 0 0 0 0])
+  ("read" .
+   [1 0 0 0])
+  ("feed" .
+   [1 0 0 0])
+  ("permittedPrefixes" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("modulePageURL" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("parser" .
+   [4 0 0 0 0 0])
+  ("ModuleListParser" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("moduleListPage" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("joinURLs" .
+   [1 0 0 0 0 0 0 0])
+  ("downloadableFile" .
+   [0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0])
+  ("debug" .
+   [2 0 0 0 0])
+  ("logging" .
+   [6 0 0 0 0 0 0])
+  ("moduleHomepageFile" .
+   [2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("moduleLinkPrefix" .
+   [1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("pageAddress" .
+   [2 0 0 0 0 0 0 0 0 0 0])
+  ("append" .
+   [2 0 0 0 0 0])
+  ("pagesProcessed" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("pageProcessor" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("title" .
+   [1 0 0 0 0])
+  ("permittedExtensions" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("resource" .
+   [1 0 0 0 0 0 0 0])
+  ("resourceDomain" .
+   [1 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("downloader" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("processPage" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("self" .
+   [9 0 0 0])
+  ("startswith" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("linkedPage" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("info" .
+   [4 0 0 0])
+  ("blit_alpha" .
+   [0 0 0 0 0 0 0 0 0 1])
+  ("screen" .
+   [2 0 0 0 0 0])
+  ("cellImage" .
+   [1 0 0 0 0 0 0 0 0])
+  ("imageRect" .
+   [3 0 0 0 0 0 0 0 0])
+  ("50" .
+   [0 1])
+  ("j" .
+   [3])
+  ("150" .
+   [0 1 0])
+  ("pos" .
+   [7 0 0])
+  ("blit" .
+   [1 0 0 0])
+  ("background" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("transparency" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("alpha" .
+   [2 0 0 0 0])
+  ("sr-speedbar" .
+   [0 0 0 0 0 0 0 0 0 0 1])))
