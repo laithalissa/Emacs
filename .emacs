@@ -28,8 +28,6 @@
    (quote
     (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring scrolltobottom stamp track)))
  '(linum-format " %d  ")
- '(smooth-scroll-mode t)
- '(smooth-scroll/vscroll-step-size 1)
  '(speedbar-default-position (quote left-right))
  '(sr-speedbar-right-side nil)
  ;; Remove scroll bars because... well... ew!
@@ -47,12 +45,16 @@
 (global-linum-mode       1)
 (global-visual-line-mode 1)
 (iswitchb-mode           1)
-(sr-speedbar-open)
+(column-number-mode      1)
+
+;; Check if speedbar exists firs otherwith you get an annoying error message
+(if (not 'sr-speedbar-exist-p)
+    (sr-speedbar-open))
 
 ;Emacs window size
 (setq default-frame-alist '(
                 (width  . 160)
-                (height . 60) ))
+                (height . 75) ))
 
 (add-to-list 'linum-disabled-modes-list '(speedbar-mode))
 
@@ -66,6 +68,8 @@
 (setq visible-bell t)
 
 ;; Smooth scroll settings 
+(smooth-scroll-mode                   1)
+(setq smooth-scroll/vscroll-step-size 1)
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
 (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't)                  ;; scroll window under mouse
