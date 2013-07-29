@@ -31,25 +31,12 @@
  '(smooth-scroll-mode t)
  '(smooth-scroll/vscroll-step-size 1)
  '(speedbar-default-position (quote left-right))
- '(speedbar-frame-parameters
-   (quote
-    ((minibuffer)
-     (width . 35)
-     (border-width . 0)
-     (menu-bar-lines . 0)
-     (tool-bar-lines . 0)
-     (unsplittable . t)
-     (left-fringe . 0)
-     (height . 50))))
  '(sr-speedbar-right-side nil)
-;; Remove scroll bars because... well... ew!
+ ;; Remove scroll bars because... well... ew!
  '(scroll-bar-mode nil)
-;; Remove the toolbar to make emacs look more lightweight
+ ;; Remove the toolbar to make emacs look more lightweight
  '(tool-bar-mode nil))
 
-;(defvar sr-speedbar-width nil
- ; "Initial width of speedbar-window.")
-;(setq sr-speedbar-width 10)
 (setq sr-speedbar-width 20)
 
 ;;;;;;;;;;;;;;;;;;;;;;
@@ -61,9 +48,6 @@
 (global-visual-line-mode 1)
 (iswitchb-mode           1)
 (sr-speedbar-open)
-
-;(with-current-buffer sr-speedbar-buffer-name
-;  (setq window-size-fixed 'width))
 
 ;Emacs window size
 (setq default-frame-alist '(
@@ -86,8 +70,6 @@
 (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't)                  ;; scroll window under mouse
 (setq scroll-step 1)                                ;; keyboard scroll one line at a time
-
-
 
 ;;;;;;;;;;;;;;;;;;
 ;; Autocomplete ;;
