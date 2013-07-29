@@ -1,10 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/packages/")
 ;; (add-to-list 'load-path "~/.emacs.d/packages/elpa/")
 
-(iswitchb-mode 1)
-;;IRC
-(require 'erc)
-(require 'erc-match)
 (require 'sr-speedbar)
 (require 'php-mode)
 (require 'move-line)
@@ -12,6 +8,9 @@
 (require 'ask-to-create-dirs)
 (require 'smooth-scroll)
 (require 'linum-off)
+(require 'erc)
+(require 'erc-match)
+(require 'copy-line)
 
 (require 'package)
 (add-to-list 'package-archives 
@@ -28,8 +27,9 @@
  '(erc-modules
    (quote
     (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring scrolltobottom stamp track)))
- '(global-visual-line-mode t)
  '(linum-format " %d  ")
+ '(smooth-scroll-mode t)
+ '(smooth-scroll/vscroll-step-size 1)
  '(speedbar-default-position (quote left-right))
  '(speedbar-frame-parameters
    (quote
@@ -41,32 +41,34 @@
      (unsplittable . t)
      (left-fringe . 0)
      (height . 50))))
- '(speedbar-indentation-width 4)
- '(sr-speedbar-max-width 35)
  '(sr-speedbar-right-side nil)
- '(sr-speedbar-width-console 35)
- '(sr-speedbar-width-x 35))
+;; Remove scroll bars because... well... ew!
+ '(scroll-bar-mode nil)
+;; Remove the toolbar to make emacs look more lightweight
+ '(tool-bar-mode nil))
 
-
+;(defvar sr-speedbar-width nil
+ ; "Initial width of speedbar-window.")
+;(setq sr-speedbar-width 10)
+(setq sr-speedbar-width 20)
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; Configure Editor ;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Enable in-frame speedbar
-(global-linum-mode 1)
+(global-linum-mode       1)
+(global-visual-line-mode 1)
+(iswitchb-mode           1)
 (sr-speedbar-open)
 
-;; (if window-system
-;;   (set-frame-size (selected-frame) 160 80)
-;; )
+;(with-current-buffer sr-speedbar-buffer-name
+;  (setq window-size-fixed 'width))
 
-(with-current-buffer sr-speedbar-buffer-name
-  (setq window-size-fixed 'width))
-
+;Emacs window size
 (setq default-frame-alist '(
-                (width . 150)
-                (height . 50) ))
+                (width  . 160)
+                (height . 60) ))
 
 (add-to-list 'linum-disabled-modes-list '(speedbar-mode))
 
@@ -79,9 +81,8 @@
 ;; To disable audible system bell for stuff like scrolling
 (setq visible-bell t)
 
-;; Smooth scroll settings
-;; scroll one line at a time (less "jumpy" than defaults)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+;; Smooth scroll settings 
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
 (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't)                  ;; scroll window under mouse
 (setq scroll-step 1)                                ;; keyboard scroll one line at a time
@@ -102,48 +103,6 @@
 (global-auto-complete-mode t)
 (add-to-list 'ac-modes 'python-mode)
 
-
-;;;;;;;;;;;;;;;;;;
-;; Key Bindings ;;
-;;;;;;;;;;;;;;;;;;
-
-;; Set Easy Line Moving
-(if (window-system)
-    (progn
-      (global-set-key (kbd "C-s-<up>")     'move-line-up)
-      (global-set-key (kbd "C-s-<down>")   'move-line-down))
-  (progn
-    (global-set-key (kbd "C-<ESC>-<up>")   'move-line-up)
-    (global-set-key (kbd "C-<ESC>-<down>") 'move-line-down))
-)
-
-;; Set undo (for some reason it's unset??)
-(global-set-key (kbd "C-/")     'undo)
-
-;; Set Natual Commenting 
-(global-set-key (kbd "C-'")     'comment-or-uncomment-line-or-region)
-
-;; Next and previous buffer
-(global-set-key (kbd "C-c p")   'windmove-up)
-(global-set-key (kbd "C-c n")   'windmove-down)
-(global-set-key (kbd "C-c f")   'windmove-right)
-(global-set-key (kbd "C-c b")   'windmove-left)
-
-(global-set-key (kbd "M-g")     'goto-line)    ; M-g  'goto-line
-(global-set-key (kbd "C-c C-e") 'eval-buffer)
-(global-set-key (kbd "C-c s")   'speedbar)
-
-
-;;;;;;;;;;;;;;;;
-;;Resizing windows
-
-(global-set-key (kbd "M-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "M-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "M-C-<down>") 'shrink-window)
-(global-set-key (kbd "M-C-<up>") 'enlarge-window)
-(global-set-key (kbd "C-x '") 'comment-or-uncomment-line-or-region)
-
-
 ;;;;;;;;;;;;;;;;;
 ;;     IRC     ;;
 ;;;;;;;;;;;;;;;;;
@@ -162,4 +121,51 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(fringe ((t (:background "grey10"))))
+ '(scroll-bar ((t (:width normal)))))
+
+;;;;;;;;;;;;;;;;;;
+;; Key Bindings ;;
+;;;;;;;;;;;;;;;;;;
+
+;; Set Easy Line Moving
+(if (window-system)
+    (progn
+      (global-set-key (kbd "C-s-<up>")     'move-line-up)
+      (global-set-key (kbd "C-s-<down>")   'move-line-down))
+  (progn
+    (global-set-key (kbd "C-<ESC>-<up>")   'move-line-up)
+    (global-set-key (kbd "C-<ESC>-<down>") 'move-line-down))
+)
+
+;; Set undo (for some reason it's unset??)
+(global-set-key (kbd "C-/")     'undo)
+
+;; Copy Line
+(global-set-key "\C-c\C-k" 'copy-line)
+
+;; Set Natual Commenting 
+(global-set-key (kbd "C-'")     'comment-or-uncomment-line-or-region)
+(global-set-key (kbd "C-x '")   'comment-or-uncomment-line-or-region)
+
+;; Goto line number
+(global-set-key (kbd "M-g")     'goto-line)
+
+;; Eval buffer
+(global-set-key (kbd "C-c C-e") 'eval-buffer)
+
+;; Toggle Speedbar
+(global-set-key (kbd "C-c s")   'speedbar)
+
+;; Up/Down/Left/Right control for buffers
+(global-set-key (kbd "C-c p")   'windmove-up)
+(global-set-key (kbd "C-c n")   'windmove-down)
+(global-set-key (kbd "C-c f")   'windmove-right)
+(global-set-key (kbd "C-c b")   'windmove-left)
+
+;;Resizing windows
+(global-set-key (kbd "M-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "M-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-C-<down>") 'shrink-window)
+(global-set-key (kbd "M-C-<up>") 'enlarge-window)
+
