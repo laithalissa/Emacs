@@ -43,7 +43,6 @@
  '(speedbar-show-unknown-files t)
 )
 
-(setq sr-speedbar-width 20)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Grab the correct Path ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -58,15 +57,13 @@
 ;; Configure Editor ;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
-;; Enable in-frame speedbar
-(global-linum-mode       1)
-(global-visual-line-mode 1)
-(iswitchb-mode           1)
-(column-number-mode      1)
+;; Speedbar is too skinny by default
+;(setq sr-speedbar-width 20)
 
 ;; Check if speedbar exists firs otherwith you get an annoying error message
-(if (not 'sr-speedbar-exist-p)
-    (sr-speedbar-open))
+(if ( not (sr-speedbar-exist-p) )
+    (sr-speedbar-open)
+)
 
 ;Emacs window size
 (setq default-frame-alist '(
