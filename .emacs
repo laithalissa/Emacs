@@ -36,12 +36,12 @@
    (quote
     (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring scrolltobottom stamp track)))
  '(linum-format " %d  ")
- '(speedbar-default-position (quote left-right))
- '(sr-speedbar-right-side nil)
- ;; Remove scroll bars because... well... ew!
  '(scroll-bar-mode nil)
- ;; Remove the toolbar to make emacs look more lightweight
- '(tool-bar-mode nil))
+ '(shell-file-name "/bin/zsh")
+ '(speedbar-default-position (quote left-right))
+ '(tool-bar-mode nil)
+ '(speedbar-show-unknown-files t)
+)
 
 (setq sr-speedbar-width 20)
 
