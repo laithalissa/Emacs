@@ -68,6 +68,7 @@
 ;; Emacs window size
 (setq default-frame-alist '((width  . 160) (height . 75)))
 
+;; Keep linum disabled on speedbar
 (add-to-list 'linum-disabled-modes-list '(speedbar-mode))
 
 ;; disable line numbers in the speedbar frame. 
@@ -80,12 +81,19 @@
 (setq visible-bell t)
 
 ;; Smooth scroll settings 
-(smooth-scroll-mode                   1)
-(setq smooth-scroll/vscroll-step-size 1)
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
 (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't)                  ;; scroll window under mouse
 (setq scroll-step 1)                                ;; keyboard scroll one line at a time
+
+;; For C-v and M-v gets annoying sometime
+;(smooth-scroll-mode                   1)
+;(setq smooth-scroll/vscroll-step-size 1)
+
+(global-linum-mode       1)
+(global-visual-line-mode 1)
+(iswitchb-mode           1)
+(column-number-mode      1)
 
 ;;;;;;;;;;;;;;;;;;
 ;; Autocomplete ;;
@@ -108,18 +116,22 @@
 (setq erc-echo-notices-in-minibuffer-flag t)
 (setq erc-input-line-position -2)
 (setq erc-keywords '("laithmaker" "laith"))
+
 (setq erc-server "irc.freenode.net" 
        erc-port 6667 
        erc-nick "laithmaker"
        erc-user-full-name "laithmaker"
        erc-email-userid "laithmaker"    ; for when ident is not activated
-       erc-prompt-for-password "moocow") ; OPN doesn't require passwords
+;       erc-prompt-for-password "moocow") ; OPN doesn't require passwords
+)
+
+;; Fix auto-complete working with linum-mode 
+(ac-linum-workaround)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(fringe ((t (:background "grey10"))))
- '(scroll-bar ((t (:width normal)))))
+ '(ac-completion-face ((t (:foreground "controlShadowColor")))))
 
-
+;(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
