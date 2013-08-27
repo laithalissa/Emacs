@@ -65,10 +65,8 @@
     (sr-speedbar-open)
 )
 
-;Emacs window size
-(setq default-frame-alist '(
-                (width  . 160)
-                (height . 75) ))
+;; Emacs window size
+(setq default-frame-alist '((width  . 160) (height . 75)))
 
 (add-to-list 'linum-disabled-modes-list '(speedbar-mode))
 
