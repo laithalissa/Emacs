@@ -229,8 +229,6 @@
 		     (session-restore)))))
 
 
-
-
 ;; Multiple curser mode
 (global-set-key (kbd "C-c C-s") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -239,3 +237,10 @@
 
 ;cursor
 (setq-default cursor-type 'bar) 
+
+;; Auto pair brackets
+(defun autopair-insert-opening ()
+  (interactive)
+     (when (autopair-pair-p)
+       (setq autopair-action (list 'opening (autopair-find-pair) (point))))
+     (autopair-fallback))
