@@ -1,6 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/packages/")
 ;; (add-to-list 'load-path "~/.emacs.d/packages/elpa/")
 
+(add-to-list 'load-path "~/.emacs.d/packages/multiple-cursors")
 (require 'sr-speedbar)
 (require 'php-mode)
 (require 'move-line)
@@ -12,6 +13,7 @@
 (require 'erc-match)
 (require 'copy-line)
 (require 'align-with-spaces)
+(require 'rename-file-and-buffer)
 (require 'multiple-cursors)
 (require 'laith-keybindings)
 
@@ -25,6 +27,9 @@
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
 (package-initialize)
+
+;; Load .emacs cos I tend to edit it every hour
+(find-file "~/.emacs")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -135,7 +140,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ac-completion-face ((t (:foreground "controlShadowColor")))))
+ '(ac-completion-face ((t (:foreground "controlShadowColor"))))
+ '(magit-diff-add ((t (:inherit diff-added))))
+ '(magit-item-highlight ((t nil))))
 
 ;(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
@@ -228,6 +235,7 @@
 		 (if (y-or-n-p "Restore desktop? ")
 		     (session-restore)))))
 
+(desktop-save-mode 1)
 
 ;; Multiple curser mode
 (global-set-key (kbd "C-c C-s") 'mc/edit-lines)
@@ -244,3 +252,7 @@
      (when (autopair-pair-p)
        (setq autopair-action (list 'opening (autopair-find-pair) (point))))
      (autopair-fallback))
+
+
+(global-unset-key (kbd "M-<down-mouse-1>"))
+(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
