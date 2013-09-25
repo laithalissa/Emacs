@@ -1,0 +1,66 @@
+(provide 'laith-keybindings)
+(require 'move-line)
+(require 'copy-line)
+(require 'natural-commenting)
+(require 'align-to-equals)
+
+;;;;;;;;;;;;;;;;;;
+;; Key Bindings ;;
+;;;;;;;;;;;;;;;;;;
+
+;; Set Easy Line Moving
+(if (window-system)
+    (progn
+      (global-set-key (kbd "C-s-<up>")     'move-line-up)
+      (global-set-key (kbd "C-s-<down>")   'move-line-down))
+  (progn
+    (global-set-key (kbd "C-<ESC>-<up>")   'move-line-up)
+    (global-set-key (kbd "C-<ESC>-<down>") 'move-line-down))
+)
+
+;; Set undo (for some reason it's unset??)
+(global-set-key (kbd "C-/")     'undo)
+
+;; Copy Line
+(global-set-key "\C-c\C-k" 'copy-line)
+
+;; Set Natual Commenting 
+(global-set-key (kbd "C-'")     'comment-or-uncomment-line-or-region)
+(global-set-key (kbd "C-x '")   'comment-or-uncomment-line-or-region)
+
+;; Goto line number
+(global-set-key (kbd "M-g")     'goto-line)
+
+;; Eval buffer
+(global-set-key (kbd "C-c C-e") 'eval-buffer)
+
+;; Toggle Speedbar
+;(global-set-key (kbd "C-c s")   'speedbar)
+;(global-set-key (kbd "C-c C-s")   'sr-speedbar-toggle)
+
+;; Up/Down/Left/Right control for buffers
+;; I can't seem to be comfortable with any of these...
+(global-set-key (kbd "C-c p")   'windmove-up)
+(global-set-key (kbd "C-c n")   'windmove-down)
+(global-set-key (kbd "C-c f")   'windmove-right)
+(global-set-key (kbd "C-c b")   'windmove-left)
+
+(global-set-key (kbd "C-x p")   'windmove-up)
+(global-set-key (kbd "C-x n")   'windmove-down)
+
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
+;; Resizing windows
+(global-set-key (kbd "M-C-<left>")  'shrink-window-horizontally)
+(global-set-key (kbd "M-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-C-<down>")  'shrink-window)
+(global-set-key (kbd "M-C-<up>")    'enlarge-window)
+
+;; Align around =
+(global-set-key (kbd "C-x |") 'align-to-equals )
+
+;; Magit
+(global-set-key (kbd "C-c g") 'magit-status)
