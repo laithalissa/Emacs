@@ -1,0 +1,14 @@
+# Ignore EVERYTHING!!
+*
+/.emacs~
+/.emacs.orig
+/.emacs.d/url/cookies~
+/.emacs.d/url/cookies
+/.emacs.d/.emacs.desktop.lock
+
+# Except:
+!.gitignore
+!.emacs
+!.emacs.d/
+!.emacs.d/*
+!.emacs.d/**/*
