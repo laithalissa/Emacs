@@ -1,0 +1,62 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Sep 11 14:09:41 2013
+;; Desktop file format version 206
+;; Emacs version 24.3.50.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("desktop-" "add" "s" "ea" "power" "center" "getsq" "min_dim" "add"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/desktop/" "~/" "~/.emacs" "~/Dev/ArcheryScore/Constructors.js" "~/Dev/ArcheryScore/DrawingUtils.js" "~/.emacs.d/elpa/multiple-cursors-1.2.1/multiple-cursors.el" "~/.emacs"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/laithalissa/Dev/ArcheryScore/DrawingUtils.js"
+  "DrawingUtils.js"
+  'js-mode
+  '(visual-line-mode global-visual-line-mode linum-mode auto-complete-mode)
+  1858
+  '(217 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/laithalissa/Dev/ArcheryScore/Constructors.js"
+  "Constructors.js"
+  'js-mode
+  '(visual-line-mode global-visual-line-mode linum-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/laithalissa/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(visual-line-mode global-visual-line-mode linum-mode auto-complete-mode)
+  5357
+  '(5623 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/laithalissa/Dev/ArcheryScore/canvas.html"
+  "canvas.html"
+  'js-mode
+  '(visual-line-mode global-visual-line-mode linum-mode auto-complete-mode)
+  561
+  '(214 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (case-fold-search . t) (truncate-lines)))
+
