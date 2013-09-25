@@ -1,0 +1,20 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("addlinehere"
+ (filename . "~/Dev/ArcheryScore/canvas.html")
+ (front-context-string . "\n}\n \nfunction ta")
+ (rear-context-string . "   canvasContext")
+ (position . 2191))
+("portsmouth"
+ (filename . "~/Dev/ArcheryScore/canvas.html")
+ (front-context-string . "function portsmo")
+ (rear-context-string . "asContext );\n}\n\n")
+ (position . 763))
+("speedbarFunction"
+ (filename . "~/.emacs")
+ (front-context-string . "exist-p)\n    (sr")
+ (rear-context-string . "bar/sr-speedbar-")
+ (position . 1447))
+)
