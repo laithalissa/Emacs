@@ -12,3 +12,16 @@
 !.emacs.d/
 !.emacs.d/*
 !.emacs.d/**/*
+
+/.emacs.d/elpa/anything-1.287/anything-autoloads.el~
+/.emacs.d/elpa/archives/gnu/archive-contents~
+/.emacs.d/elpa/archives/marmalade/archive-contents~
+/.emacs.d/elpa/autopair-0.3/autopair-autoloads.el~
+/.emacs.d/elpa/buffer-move-0.4/buffer-move-autoloads.el~
+/.emacs.d/elpa/desktop-0.1/desktop-autoloads.el~
+/.emacs.d/elpa/exec-path-from-shell-1.5/exec-path-from-shell-autoloads.el~
+/.emacs.d/elpa/flymake-0.4.16/flymake-autoloads.el~
+/.emacs.d/elpa/flymake-easy-0.9/flymake-easy-autoloads.el~
+/.emacs.d/elpa/flymake-jslint-0.10/flymake-jslint-autoloads.el~
+/.emacs.d/elpa/magit-1.2.0/magit-autoloads.el~
+/.emacs.d/elpa/window-number-1.0.1/window-number-autoloads.el~
