@@ -77,7 +77,7 @@
 ;; )
 
 ;; Emacs window size
-(setq default-frame-alist '((width  . 160) (height . 75)))
+(setq default-frame-alist '((width  . 160) (height . 60)))
 
 ;; Keep linum disabled on speedbar
 (add-to-list 'linum-disabled-modes-list '(speedbar-mode))
