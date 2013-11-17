@@ -28,6 +28,10 @@
       "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 ;; Load .emacs cos I tend to edit it every hour
 (find-file "~/.emacs")
 
