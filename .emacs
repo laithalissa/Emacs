@@ -144,8 +144,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ac-completion-face ((t (:foreground "controlShadowColor"))))
- '(magit-diff-add ((t (:inherit diff-added))))
- '(magit-item-highlight ((t nil))))
+ '(magit-diff-add ((t (:inherit diff-added))) t)
+ '(magit-item-highlight ((t nil)) t))
 
 ;(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
