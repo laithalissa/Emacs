@@ -43,10 +43,9 @@
  '(ac-auto-show-menu 0.5)
  '(ac-candidate-limit 6)
  '(ac-delay 0.5)
- '(custom-enabled-themes (quote (wheatgrass)))
- '(erc-modules
-   (quote
-    (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring scrolltobottom stamp track)))
+ '(custom-enabled-themes (quote (spolsky)))
+ '(custom-safe-themes (quote ("e26780280b5248eb9b2d02a237d9941956fc94972443b0f7aeec12b5c15db9f3" default)))
+ '(erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring scrolltobottom stamp track)))
  '(linum-format " %d  ")
  '(magit-repo-dirs nil)
  '(scroll-bar-mode nil)
