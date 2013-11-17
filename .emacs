@@ -58,8 +58,8 @@
 ;; Grab the correct Path ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;(when (memq window-system '(mac ns))
-;  (exec-path-from-shell-initialize))
+(when (memq window-system '(mac ns))
+ (exec-path-from-shell-initialize))
 
 ;; Show emacs where ispell is
 (setq ispell-program-name "/usr/local/Cellar/ispell/3.3.02/bin/ispell")
